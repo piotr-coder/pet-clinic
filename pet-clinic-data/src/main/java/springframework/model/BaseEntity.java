@@ -1,4 +1,4 @@
-package model;
+package springframework.model;
 
 import java.io.Serializable;
 

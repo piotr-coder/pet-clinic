@@ -1,6 +1,6 @@
-package services;
+package springframework.services;
 
-import model.Owner;
+import springframework.model.Owner;
 
 public interface OwnerService extends CrudService<Owner, Long>{
     Owner findByLastName(String lastName);

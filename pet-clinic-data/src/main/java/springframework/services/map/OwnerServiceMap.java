@@ -1,10 +1,12 @@
-package services.map;
+package springframework.services.map;
 
-import model.Owner;
-import services.OwnerService;
+import org.springframework.stereotype.Service;
+import springframework.model.Owner;
+import springframework.services.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
