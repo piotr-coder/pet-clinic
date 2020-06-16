@@ -32,13 +32,13 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
         map.entrySet().removeIf(entry -> entry.getValue().equals(object));
     }
     private Long getNextId(){
-        Long nextId = null;
-
-        try{
-            nextId = Collections.max(map.keySet()) +1;
-        } catch (NoSuchElementException e){
-            nextId = 1L;
-        }
-        return nextId;
+//        Long nextId = null;
+//        try{
+//            nextId = Collections.max(map.keySet()) +1;
+//        } catch (NoSuchElementException e){
+//            nextId = 1L;
+//        }
+//        return nextId;
+        return map.size() > 0 ? Collections.max(map.keySet())+1 : 1L;
     }
 }
