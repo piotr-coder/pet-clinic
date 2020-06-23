@@ -2,7 +2,7 @@ package springframework.services.map;
 
 import org.springframework.stereotype.Service;
 import springframework.model.Speciality;
-import springframework.services.SpecialityService;
+import springframework.services.SpecialtyService;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import java.util.Set;
  * Created by Piotr on 2020-06-23
  */
 @Service
-public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialityService {
+public class SpecialtyMapService extends AbstractMapService<Speciality, Long> implements SpecialtyService {
     @Override
     public Set<Speciality> findAll() {
         return super.findAll();
