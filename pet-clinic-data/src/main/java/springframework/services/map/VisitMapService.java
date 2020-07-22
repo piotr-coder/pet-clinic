@@ -1,5 +1,6 @@
 package springframework.services.map;
 
+import org.springframework.stereotype.Service;
 import springframework.model.Visit;
 import springframework.services.VisitService;
 
@@ -8,6 +9,7 @@ import java.util.Set;
 /**
  * Created by Piotr on 2020-07-22
  */
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
     @Override
     public Set<Visit> findAll() {
