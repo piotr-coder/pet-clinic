@@ -10,6 +10,8 @@ import springframework.services.PetService;
 import springframework.services.VisitService;
 
 import javax.validation.Valid;
+import java.beans.PropertyEditorSupport;
+import java.time.LocalDate;
 import java.util.Map;
 
 /**
@@ -26,8 +28,15 @@ public class VisitController {
     }
 
     @InitBinder
-    public void setAlloweedFields(WebDataBinder dataBinder) {
+    public void dataBinder(WebDataBinder dataBinder) {
         dataBinder.setDisallowedFields("id");
+
+        dataBinder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
+            @Override
+            public void setAsText(String text) throws IllegalArgumentException {
+                setValue(LocalDate.parse(text));
+            }
+        });
 
 //        dataBinder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
 //            @Override
